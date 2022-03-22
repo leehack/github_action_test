@@ -9,8 +9,6 @@ jobs:
     name: deploy-stg
     # environment: stg
     runs-on: ubuntu-20.04
-    needs:
-      - build
     steps:
       - name: Command
         run: |-
