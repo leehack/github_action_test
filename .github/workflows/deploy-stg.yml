@@ -4,6 +4,8 @@ on:
     workflows: [Test and Build]
     types:
       - completed 
+  workflow_dispatch:
+
 jobs:
   deploy-stg:
     name: deploy-stg
