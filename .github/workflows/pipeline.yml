@@ -10,12 +10,22 @@ jobs:
       - name: Command
         run: |-
           env
+  build:
+    name: build
+    environment: build
+    runs-on: ubuntu-20.04
+    needs:
+      - test
+    steps:
+      - name: Command
+        run: |-
+          env
   stg:
     name: stg
     environment: stg
     runs-on: ubuntu-20.04
     needs:
-      - test
+      - build
     steps:
       - name: Command
         run: |-
