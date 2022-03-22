@@ -1,0 +1,20 @@
+name: Automatic - Test, Build, and Deploy
+on: push
+
+jobs:
+  test:
+    name: test
+    environment: test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Command
+        run: |-
+          env
+  stg:
+    name: stg
+    environment: stg
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Command
+        run: |-
+          env
