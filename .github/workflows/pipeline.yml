@@ -27,4 +27,4 @@ jobs:
     steps:
       - name: Command
         run: |-
-          env
+          echo $GITHUB_SHA
