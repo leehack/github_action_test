@@ -4,7 +4,6 @@ on: push
 jobs:
   test:
     name: test
-    environment: test
     runs-on: ubuntu-20.04
     steps:
       - name: Command
@@ -19,9 +18,29 @@ jobs:
       - name: Command
         run: |-
           env
-  stg:
-    name: stg
+  deploy-test:
+    name: deploy-test
+    environment: test
+    runs-on: ubuntu-20.04
+    needs:
+      - build
+    steps:
+      - name: Command
+        run: |-
+          env
+  deploy-stg:
+    name: deploy-stg
     environment: stg
+    runs-on: ubuntu-20.04
+    needs:
+      - build
+    steps:
+      - name: Command
+        run: |-
+          env
+  deploy-prd:
+    name: deploy-prd
+    environment: prd
     runs-on: ubuntu-20.04
     needs:
       - build
